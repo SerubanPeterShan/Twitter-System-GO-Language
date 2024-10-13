@@ -3,7 +3,6 @@ package main
 import (
 	"context"
 	"encoding/json"
-	"log"
 	"net/http"
 
 	"github.com/michimani/gotwi"
@@ -48,7 +47,6 @@ func deleteTweet(client *gotwi.Client, tweetID string) (bool, error) {
 		ID: tweetID,
 	}
 	res, err := managetweet.Delete(context.Background(), client, input)
-	log.Println(managetweet.Delete(context.Background(), client, input))
 	if err != nil {
 		return false, err
 	}
