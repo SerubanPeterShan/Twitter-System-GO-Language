@@ -1,12 +1,12 @@
-services:
-  app:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    ports:
-      - "8099:8099"
-    volumes:
-      - .:/app
-    command: ["go", "run", "."]
-    env_file:
-      - .env
+services: # Define the services that make up your app
+  app: # Name of the service
+    build: # Configuration for building the Docker image
+      context: . # Set the build context to the current directory
+      dockerfile: Dockerfile # Specify the Dockerfile to use for building the image
+    ports: # Expose ports
+      - "8099:8099" # Map port 8099 on the host to port 8099 on the container
+    volumes: # Mount host paths or named volumes
+      - .:/app # Mount the current directory to /app in the container
+    command: ["go", "run", "."] # Command to run the Go application
+    env_file: # Specify the environment file
+      - .env # Load environment variables from the .env file
