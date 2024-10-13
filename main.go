@@ -29,6 +29,8 @@ func UserHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 // getClient initializes and returns a new gotwi.Client using OAuth1 user context.
+// gotwi will automatically get the API key and API secret key from the environment variables
+// GOTWI_API_KEY and GOTWI_API_KEY_SECRET.
 func getClient() (*gotwi.Client, error) {
 	accessToken := os.Getenv("ACCESS_TOKEN")
 	accessTokenSecret := os.Getenv("ACCESS_TOKEN_SECRET")
