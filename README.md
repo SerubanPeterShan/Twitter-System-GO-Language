@@ -34,7 +34,15 @@ This project demonstrates how to create a simple API using Go to post and delete
 
 2. Ensure that `.env` is listed in your `.gitignore` to keep your keys secure.
 
-### Step 4: Run the Program
+### Install `gotwi`
+
+To interact with the Twitter API, you need to install the `gotwi` library. Run the following command to add it to your project:
+
+```sh
+go get github.com/michimani/gotwi
+```
+
+### Step 5: Run the Program
 
 #### Using Docker Compose
 
@@ -83,7 +91,13 @@ This project demonstrates how to create a simple API using Go to post and delete
    setenv.bat
    ```
 
-3. Run the Go application:
+3. Install the required libraries:
+
+   ```bat
+   go mod downlaod
+   ```
+
+4. Run the Go application:
 
    ```bat
    go run .
@@ -238,3 +252,4 @@ The program handles API errors and invalid inputs by returning appropriate HTTP 
 - **500 Internal Server Error**: Returned if there is an error with the Twitter API, along with the error message.
 
 By following these guidelines, you can effectively interact with the Twitter API to post and delete tweets using the provided Go application.
+
